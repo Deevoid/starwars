@@ -12,7 +12,7 @@ import {
   CategoryEnum,
   CategoryList,
 } from "../components/organisms/CategoryList/CategoryList";
-import { CategoryListMobile } from "../components/organisms/CategoryListMobile/CategoryListMobile";
+import { getHomePageStaticProps } from "../components/staticProps";
 
 const Home: NextPage = () => {
   const globalCategory = useReactiveVar(globalCategoryState);
@@ -56,3 +56,5 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps = getHomePageStaticProps;
