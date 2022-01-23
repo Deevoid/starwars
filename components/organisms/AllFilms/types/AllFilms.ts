@@ -10,29 +10,25 @@
 export interface AllFilms_allFilms_edges_node {
   __typename: "Film";
   /**
+   * The ID of an object
+   */
+  id: string;
+  /**
    * The title of this film.
    */
   title: string | null;
   /**
-   * The episode number of this film.
+   * The opening paragraphs at the beginning of this film.
    */
-  episodeID: number | null;
-  /**
-   * The name of the director of this film.
-   */
-  director: string | null;
-  /**
-   * The name(s) of the producer(s) of this film.
-   */
-  producers: (string | null)[] | null;
+  openingCrawl: string | null;
   /**
    * The ISO 8601 date format of film release at original creator country.
    */
   releaseDate: string | null;
   /**
-   * The ID of an object
+   * The name of the director of this film.
    */
-  id: string;
+  director: string | null;
 }
 
 export interface AllFilms_allFilms_edges {

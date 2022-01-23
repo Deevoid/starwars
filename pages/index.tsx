@@ -1,11 +1,56 @@
+import { useReactiveVar } from "@apollo/client";
 import type { NextPage } from "next";
-import { Films } from "../components/organisms/Film/Films";
+import { HeroText } from "../components/atoms/HeroText/HeroText";
+import { globalCategoryState } from "../components/globalStates/GlobalCategoryState";
+import { AllFilms } from "../components/organisms/AllFilms/AllFilms";
+import { AllPeople } from "../components/organisms/AllPeople/AllPeople";
+import { AllPlanets } from "../components/organisms/AllPlanets/AllPlanets";
+import { AllSpecies } from "../components/organisms/AllSpecies/AllSpecies";
+import { AllStarships } from "../components/organisms/AllStarships/AllStarships";
+import { AllVehicles } from "../components/organisms/AllVehicles/AllVehicles";
+import {
+  CategoryEnum,
+  CategoryList,
+} from "../components/organisms/CategoryList/CategoryList";
+import { CategoryListMobile } from "../components/organisms/CategoryListMobile/CategoryListMobile";
 
 const Home: NextPage = () => {
+  const globalCategory = useReactiveVar(globalCategoryState);
+
+  const renderTemplate = () => {
+    switch (globalCategory) {
+      case CategoryEnum.Films: {
+        return <AllFilms />;
+      }
+      case CategoryEnum.People: {
+        return <AllPeople />;
+      }
+      case CategoryEnum.Planets: {
+        return <AllPlanets />;
+      }
+      case CategoryEnum.Species: {
+        return <AllSpecies />;
+      }
+      case CategoryEnum.Starships: {
+        return <AllStarships />;
+      }
+      case CategoryEnum.Vehicles: {
+        return <AllVehicles />;
+      }
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="bg-red-200">
-      Hello World
-      <Films />
+    <div className="">
+      <div className="my-4 md:my-5 md:mb-8">
+        <HeroText />
+      </div>
+      <div className="md:flex justify-center gap-4 p-4">
+        <CategoryList />
+        {renderTemplate()}
+      </div>
     </div>
   );
 };

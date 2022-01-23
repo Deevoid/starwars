@@ -6,12 +6,11 @@ export const getAllFilmsQuery = gql`
       totalCount
       edges {
         node {
-          title
-          episodeID
-          director
-          producers
-          releaseDate
           id
+          title
+          openingCrawl
+          releaseDate
+          director
         }
       }
     }
