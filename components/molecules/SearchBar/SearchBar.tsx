@@ -17,7 +17,7 @@ export const SearchBar = (props: Props) => {
   const [input, setInput] = useState("");
   return (
     <>
-      <div className="relative mt-1">
+      <div className=" mt-1 relative md:sticky md:top-80">
         <input
           value={input}
           onChange={(event) => {

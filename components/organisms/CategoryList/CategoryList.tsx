@@ -31,7 +31,7 @@ export const CategoryList = (props: Props) => {
   return (
     <div className="sticky top-0 py-3 gap-2 md:gap-0 md:py-0 bg-white z-10 md:top-10">
       <div
-        className="md:rounded-md overflow-scroll md:overflow-hidden md:border flex flex-nowrap
+        className="md:rounded-md md:mb-4 overflow-scroll md:overflow-hidden md:border flex flex-nowrap
          md:flex-col md:divide-y md:min-w-[200px]
      h-fit sticky top-0 py-3 gap-2 md:gap-0 md:py-0 bg-white z-10 md:top-10"
       >
